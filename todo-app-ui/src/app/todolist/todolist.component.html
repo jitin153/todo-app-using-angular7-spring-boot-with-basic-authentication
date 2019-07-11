@@ -1,0 +1,31 @@
+<h2>My Todos</h2>
+<div class="container">
+  <div class="alert alert-success" *ngIf="message">{{message}}</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>DESCRIPTION</th>
+        <th>COMPLETION DATE</th>
+        <th>IS DONE?</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>{{todo.description}}</td>
+        <!-- Pipes to format date and make it uppercase -->
+        <td>{{todo.targetDate | date | uppercase}}</td>
+        <td *ngIf="todo.isComplete">YES</td>
+        <td *ngIf="!todo.isComplete">NO</td>
+        <td>
+          <button class="btn btn-primary" (click)="updateTodo(todo.id)">EDIT</button>
+          &nbsp;
+          <button class="btn btn-danger" (click)="deleteTodo(todo.id)">DELETE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <button class="btn btn-success" (click)="createNewTodo()">Add New Todo</button>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h2>Login!</h2>
+<div class="alert alert-danger" *ngIf="invalidLogin">{{errorMessage}}</div>
+<div class="container">
+    <div class="form-group">
+        <label for="email">Username</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+      </div>
+      <!-- <button (click)="doLogin()" class="btn btn-primary">Login</button> -->
+      <button (click)="doLoginWithBasicAuth()" class="btn btn-primary">Login</button>
+
+
+
+
+  <!-- Username : <input type="text" name="username" [(ngModel)]="username" />
+  Password : <input type="password" name="password" [(ngModel)]="password" />
+  <button (click)=doLogin() class="btn btn-primary">Login</button> -->
+</div>

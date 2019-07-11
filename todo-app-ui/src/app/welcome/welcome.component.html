@@ -1,0 +1,18 @@
+<h2>Welcome {{name}}</h2>
+<div class="container">
+  You can manage your todos <a routerLink="/todos">here</a>
+</div>
+<br/>
+<div class="container">
+  <button (click)="getMessage()" class="btn btn-primary">Get Message From Backend</button>
+</div>
+<div class="container" *ngIf="messageFromBackend">
+  <h4>Message From Backend is : {{messageFromBackend}}</h4>
+</div>
+<br/>
+<div class="container">
+  <button (click)="getMessageWithPathVariable()" class="btn btn-primary">Get Message From Backend With Path Variable</button>
+</div>
+<div class="container" *ngIf="messageFromBackend">
+  <h4>Message From Backend is : {{messageFromBackend}}</h4>
+</div>
